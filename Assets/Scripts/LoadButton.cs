@@ -9,7 +9,9 @@ public class LoadButton : MonoBehaviour
     public string sceneToLoad = "";
     
     public void LoadScene() {
-        if (sceneToLoad != "")
+        if (sceneToLoad == "QUIT")
+            Application.Quit();
+        else if (sceneToLoad != "")
             SceneManager.LoadScene(sceneToLoad);
         else
             Debug.Log("Please define the scene name in the editor.");
