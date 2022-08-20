@@ -1,24 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor.UI;
 using TMPro;
 
-public class Ammo : MonoBehaviour
+public class Distance : MonoBehaviour
 {
-    private TextMeshProUGUI ammoText;
+    private TextMeshProUGUI distanceText;
     public Player player;
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<Player>();
-        ammoText = GetComponent<TextMeshProUGUI>();
+        distanceText = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        ammoText.text = "Ammo: " + player.rounds;
+        distanceText.text = (int)player.currentDistanceTraveled + "m";
     }
 }
